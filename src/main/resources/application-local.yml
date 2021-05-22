@@ -1,0 +1,21 @@
+server:
+  port: 8980
+  servlet:
+    context-path: /mybatis
+  max-http-header-size: 100000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:mysql://localhost:3306/mtg_ssdb?GMT%2B8&useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&tinyInt1isBit=false
+#    url: jdbc:p6spy:mysql://localhost:3306/mtg_ssdb?GMT%2B8&useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&tinyInt1isBit=false
+    username: root
+    password: 19971025lwh
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis-plus:
+  type-aliases-package: com.example.mybatisplus.model
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
